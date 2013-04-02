@@ -37,13 +37,25 @@
       {
         display: none;
         position: absolute;
-        width: 280px;
+        width: 400px;
+        /*width: 280px;*/
         padding: 10px;
         background: #eeeeee;
         color: #000000;
         border: 1px solid #1a1a1a;
         font-size: 90%;
       }
+      
+      .pop{
+		position: absolute;
+        width: 400px;
+        /*width: 280px;*/
+        padding: 10px;
+        background: #eeeeee;
+        color: #000000;
+        border: 1px solid #1a1a1a;
+        font-size: 90%;				
+			}
     </style> 
     <link rel="stylesheet" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Style/SAGE.CSS" type="text/css" />				
     
@@ -108,20 +120,37 @@
         });
         
          $('area#MS').mousemove(function(e) {
-          $("div#pop-MS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+          //$("div#pop-MS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+          $("div#pop-MS").css({'top': e.pageY + moveDown,'left': e.pageX + moveLeft});
         });
 
 ////BS
-        $('area#BS').hover(function(e) {
-          $('div#pop-BS').show();
-      
-        }, function() {
-          $('div#pop-BS').hide();
-        });
-        
-         $('area#BS').mousemove(function(e) {
-          $("div#pop-BS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-        });
+        $('area#BS').hover(function (e) {
+		$('div#pop-BS').show();
+				
+				}, function () {
+					$('div#pop-BS').hide();
+				});
+				
+$('area#BS').mousemove(function (e) {
+
+//	$("div#pop-BS").css({'top': e.pageY + moveDown,'left': e.pageX + moveLeft});
+	$("div#pop-BS").css({'bottom':'10px','left': e.pageX + moveLeft});
+	var bot = $("div#pop-BS").css("bottom");
+	var top = $("div#pop-BS").css("top");
+	//alert(bot);
+	//alert(top);
+	if(bot == "auto")
+	{
+		//$("div#pop-BS").removeAttr('style');
+		//$("div#pop-BS").addClass("pop");
+		
+      //  $("div#pop-BS").css('left', e.pageX + moveLeft).css('bottom', '10px').css('top', '10px');
+     // $("div#pop-BS").css({'top':'','left':e.pageX + moveLeft,'bottom':'10px'});
+	}
+});
+				
+				
 ////BB
         $('area#BB').hover(function(e) {
           $('div#pop-BB').show();
@@ -131,7 +160,8 @@
         });
         
          $('area#BB').mousemove(function(e) {
-          $("div#pop-BB").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+         // $("div#pop-BB").css('left', e.pageX + moveLeft).css('bottom', '10px');
+         $("div#pop-BB").css({'left':e.pageX + moveLeft,'bottom':'10px'});
         });       
       });
     </script>
