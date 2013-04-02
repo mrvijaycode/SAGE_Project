@@ -16,6 +16,7 @@ function tooltip() {
 			$(xData.responseXML).SPFilterNode("z:row").each(function () {
 
 				var keyMeasure = $(this).attr("ows_Key_x0020_Measure");
+				var keyBody = $(this).attr("ows_Key_x0020_Measure_x0020_Summary");
 				var keyTitle = $(this).attr("ows_Title");
 				var keyID = $(this).attr("ows_ID");
 
@@ -23,27 +24,27 @@ function tooltip() {
 				debugger
 				switch (keyID) {
 				case "1":
-					$("#pop-SSI").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-SSI").html(buidTable(keyTitle, keyBody));
 					break;
 					
 				case "2":
-					$("#pop-SSG").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-SSG").html(buidTable(keyTitle, keyBody));
 					break;
 
 				case "3":
-					$("#pop-MS").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-MS").html(buidTable(keyTitle, keyBody));
 					break;
 
 				case "4":
-					$("#pop-BS").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-BS").html(buidTable(keyTitle, keyBody));
 					break;
 
 				case "5":
-					$("#pop-BB").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-BB").html(buidTable(keyTitle, keyBody));
 					break;
 
 				case "6":
-					$("#pop-SSO").html(buidTable(keyTitle, keyMeasure));
+					$("#pop-SSO").html(buidTable(keyTitle, keyBody));
 					break;
 				}
 			});
