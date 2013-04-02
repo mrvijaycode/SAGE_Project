@@ -23,12 +23,36 @@ function tooltip() {
 				debugger
 				switch (keyID) {
 				case "1":
-					$("#pop-SSI").html(keyTitle);
-					alert("done..")
+					$("#pop-SSI").html(buidTable(keyTitle, keyMeasure));
+					break;
+					
+				case "2":
+					$("#pop-SSG").html(buidTable(keyTitle, keyMeasure));
 					break;
 
+				case "3":
+					$("#pop-MS").html(buidTable(keyTitle, keyMeasure));
+					break;
+
+				case "4":
+					$("#pop-BS").html(buidTable(keyTitle, keyMeasure));
+					break;
+
+				case "5":
+					$("#pop-BB").html(buidTable(keyTitle, keyMeasure));
+					break;
+
+				case "6":
+					$("#pop-SSO").html(buidTable(keyTitle, keyMeasure));
+					break;
 				}
 			});
 		}
 	});
+}
+
+//build the table
+function buidTable(strTitle, strBody) {
+	var strHtml = "<h4>" + strTitle + "</h4><p>" + strBody + "</p>";
+	return strHtml;
 }
