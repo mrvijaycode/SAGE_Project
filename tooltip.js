@@ -1,16 +1,9 @@
-﻿
-$(document).ready(function () {
-	//main();
-	//alert("OK");
+﻿$(document).ready(function () {
 	tooltip();
 });
 
-function main() {
-	alert("welcome to the fucntion");
-}
-
 function tooltip() {
-	alert("working..");
+	//alert("working..");
 	$().SPServices({
 		operation : "GetListItems",
 		async : false,
@@ -19,8 +12,23 @@ function tooltip() {
 		CAMLQuery : "",
 		completefunc : function (xData, Status) {
 
-			alert(xData.responseText);
-			$(xData.responseXML).SPFilterNode("z:row").each(function () {});
+			//alert(xData.responseText);
+			$(xData.responseXML).SPFilterNode("z:row").each(function () {
+
+				var keyMeasure = $(this).attr("ows_Key_x0020_Measure");
+				var keyTitle = $(this).attr("ows_Title");
+				var keyID = $(this).attr("ows_ID");
+
+				//alert(keyID + ":" + keyTitle);
+				debugger
+				switch (keyID) {
+				case "1":
+					$("#pop-SSI").html(keyTitle);
+					alert("done..")
+					break;
+
+				}
+			});
 		}
 	});
 }
