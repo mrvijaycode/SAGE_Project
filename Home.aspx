@@ -65,13 +65,13 @@
 		<div style="height:388px; width:423px">
 			<img alt="Key Measures" src="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Images/KeyMeasures.jpg" width="423" height="389" border="0" usemap="#Map" hidefocus="hidefocus"/>
 <map name="Map" id="Map">
-  <area id="SSI" shape="circle" coords="133,58,54" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssi.aspx" /><!--Store &amp; Shopper Intelligence-->
-  <area id="SGE" shape="circle" coords="212,197,77" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/SGE.aspx" /><!--Store as Growth Engine-->
-  <area id="MS" shape="circle" coords="364,195,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ms.aspx" /><!-- More Stores-->
-  <area id="SSG" shape="circle" coords="297,57,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssg.aspx" /> <!--Shopper Sources of Growth-->
-  <area id="SSO" shape="circle" coords="60,197,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/sso.aspx" /><!--Superb Store Operations-->
-  <area id="BB" shape="circle" coords="135,330,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bb.aspx" /><!--Bigger Baskets-->
-  <area id="BS" shape="circle" coords="296,328,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bs.aspx" /><!--Better Stores-->
+  <area id="SSI" shape="circle" coords="133,58,54" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssi.aspx?itmid=1" /><!--Store &amp; Shopper Intelligence-->
+  <area id="SGE" shape="circle" coords="212,197,77" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/SGE.aspx?itmid=" /><!--Store as Growth Engine-->
+  <area id="MS" shape="circle" coords="364,195,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ms.aspx?itmid=3" /><!-- More Stores-->
+  <area id="SSG" shape="circle" coords="297,57,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssg.aspx?itmid=2" /> <!--Shopper Sources of Growth-->
+  <area id="SSO" shape="circle" coords="60,197,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/sso.aspx?itmid=6" /><!--Superb Store Operations-->
+  <area id="BB" shape="circle" coords="135,330,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bb.aspx?itmid=5" /><!--Bigger Baskets-->
+  <area id="BS" shape="circle" coords="296,328,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bs.aspx?itmid=4" /><!--Better Stores-->
 </map>
 <!-- HIDDEN / POP-UP DIV -->
     <div id="pop-SSI">
