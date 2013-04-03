@@ -58,113 +58,6 @@
 			}
     </style> 
     <link rel="stylesheet" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Style/SAGE.CSS" type="text/css" />				
-    
-     <script type="text/javascript">
-      $(function() {
-        var moveLeft = 20;
-        var moveDown = 10;
-////SSI
-        $('area#SSI').hover(function(e) {
-          $('div#pop-SSI').show();
-      
-        }, function() {
-          $('div#pop-SSI').hide();
-        });
-        
-        $('area#SSI').mousemove(function(e) {
-          $("div#pop-SSI").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-        });
-        
-////SGE
-        $('area#SGE').hover(function(e) {
-          $('div#pop-SGE').show();
-      
-        }, function() {
-          $('div#pop-SGE').hide();
-        });
-        
-         $('area#SGE').mousemove(function(e) {
-          $("div#pop-SGE").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-        });
-        
-////SSO
-        $('area#SSO').hover(function(e) {
-          $('div#pop-SSO').show();
-      
-        }, function() {
-          $('div#pop-SSO').hide();
-        });
-        
-         $('area#SSO').mousemove(function(e) {
-          $("div#pop-SSO").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-        });
-
-////SSG
-        $('area#SSG').hover(function(e) {
-          $('div#pop-SSG').show();
-      
-        }, function() {
-          $('div#pop-SSG').hide();
-        });
-        
-         $('area#SSG').mousemove(function(e) {
-          $("div#pop-SSG").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-        });
-
-////MS
-        $('area#MS').hover(function(e) {
-          $('div#pop-MS').show();
-      
-        }, function() {
-          $('div#pop-MS').hide();
-        });
-        
-         $('area#MS').mousemove(function(e) {
-          //$("div#pop-MS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-          $("div#pop-MS").css({'top': e.pageY + moveDown,'left': e.pageX + moveLeft});
-        });
-
-////BS
-        $('area#BS').hover(function (e) {
-		$('div#pop-BS').show();
-				
-				}, function () {
-					$('div#pop-BS').hide();
-				});
-				
-$('area#BS').mousemove(function (e) {
-
-//	$("div#pop-BS").css({'top': e.pageY + moveDown,'left': e.pageX + moveLeft});
-	$("div#pop-BS").css({'bottom':'10px','left': e.pageX + moveLeft});
-	var bot = $("div#pop-BS").css("bottom");
-	var top = $("div#pop-BS").css("top");
-	//alert(bot);
-	//alert(top);
-	if(bot == "auto")
-	{
-		//$("div#pop-BS").removeAttr('style');
-		//$("div#pop-BS").addClass("pop");
-		
-      //  $("div#pop-BS").css('left', e.pageX + moveLeft).css('bottom', '10px').css('top', '10px');
-     // $("div#pop-BS").css({'top':'','left':e.pageX + moveLeft,'bottom':'10px'});
-	}
-});
-				
-				
-////BB
-        $('area#BB').hover(function(e) {
-          $('div#pop-BB').show();
-      
-        }, function() {
-          $('div#pop-BB').hide();
-        });
-        
-         $('area#BB').mousemove(function(e) {
-         // $("div#pop-BB").css('left', e.pageX + moveLeft).css('bottom', '10px');
-         $("div#pop-BB").css({'left':e.pageX + moveLeft,'bottom':'10px'});
-        });       
-      });
-    </script>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="SAGEBody">
 <tr>
@@ -172,13 +65,13 @@ $('area#BS').mousemove(function (e) {
 		<div style="height:388px; width:423px">
 			<img alt="Key Measures" src="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Images/KeyMeasures.jpg" width="423" height="389" border="0" usemap="#Map" hidefocus="hidefocus"/>
 <map name="Map" id="Map">
-  <area id="SSI" shape="circle" coords="133,58,54" href="#" /><!--Store &amp; Shopper Intelligence-->
-  <area id="SGE" shape="circle" coords="212,197,77" href="#" /><!--Store as Growth Engine-->
-  <area id="MS" shape="circle" coords="364,195,55" href="#" /><!-- More Stores-->
-  <area id="SSG" shape="circle" coords="297,57,55" href="#" /> <!--Shopper Sources of Growth-->
-  <area id="SSO" shape="circle" coords="60,197,55" href="#" /><!--Superb Store Operations-->
-  <area id="BB" shape="circle" coords="135,330,55" href="#" /><!--Bigger Baskets-->
-  <area id="BS" shape="circle" coords="296,328,55" href="#" /><!--Better Stores-->
+  <area id="SSI" shape="circle" coords="133,58,54" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssi.aspx" /><!--Store &amp; Shopper Intelligence-->
+  <area id="SGE" shape="circle" coords="212,197,77" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/SGE.aspx" /><!--Store as Growth Engine-->
+  <area id="MS" shape="circle" coords="364,195,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ms.aspx" /><!-- More Stores-->
+  <area id="SSG" shape="circle" coords="297,57,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/ssg.aspx" /> <!--Shopper Sources of Growth-->
+  <area id="SSO" shape="circle" coords="60,197,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/sso.aspx" /><!--Superb Store Operations-->
+  <area id="BB" shape="circle" coords="135,330,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bb.aspx" /><!--Bigger Baskets-->
+  <area id="BS" shape="circle" coords="296,328,55" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/bs.aspx" /><!--Better Stores-->
 </map>
 <!-- HIDDEN / POP-UP DIV -->
     <div id="pop-SSI">
@@ -285,5 +178,7 @@ $('area#BS').mousemove(function (e) {
 	
 </tr>
 </table>
+
+<div id="cuPos" style="position:absolute"></div>    
     
 </asp:Content>
