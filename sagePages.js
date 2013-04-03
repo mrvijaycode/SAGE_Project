@@ -1,4 +1,15 @@
-﻿//var itmid = window.location.search.split("?itmid=")[1];
+﻿
+//***************************************************************
+//* Project Name     : SAGE
+//* Application name : subpages
+//* Dependencies     :
+//* Limitations      :
+//* Created Date     : 2 April 2013
+//* Author           : Vijay Bhaskar C
+//****************************************************************
+
+
+var itmid = window.location.search.split("?itmid=")[1];
 
 var keyBodyArr = new Array();
 var keyTitleArr = new Array();
@@ -6,6 +17,7 @@ var keyIDArr = new Array();
 
 $(document).ready(function () {
 	contentLoad();
+	//alert(itmid);
 });
 
 function contentLoad() {
@@ -35,18 +47,19 @@ function contentLoad() {
 function buidTable(strTitleArr, strBodyArr) {
 	var strTitle;
 	var strBody;
+
 	$.each(strTitleArr, function (i) {
-		if (strTitleArr[0] != "") {
-			strTitle = strTitleArr[0];
+		if (strTitleArr[itmid - 1] != "") {
+			strTitle = strTitleArr[itmid - 1];
 		}
 	});
 
 	$.each(strBodyArr, function (i) {
-		if (strBodyArr[0] != "") {
-			strBody = strBodyArr[0];
+		if (strBodyArr[itmid - 1] != "") {
+			strBody = strBodyArr[itmid - 1];
 		}
 	});
-	
+
 	var strHtml = "<h4>" + strTitle + "</h4><p>" + strBody + "</p>";
-	$("#divsso").html(strHtml)
+	$("#divContent").html(strHtml)
 }
