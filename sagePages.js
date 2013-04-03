@@ -29,18 +29,24 @@ function contentLoad() {
 			});
 		}
 	});
-	buidTable(keyTitleArr);
+	buidTable(keyTitleArr, keyBodyArr);
 }
 
-function buidTable(strArr) {
-
-	$.each(strArr, function (i) {
-		if (strArr[i] != "") {
-			alert(strArr[i]);
-			//strQuery += "<Method ID='" + (i + 1) + "' Cmd='Delete'><Field Name='ID'>" + strArr[i] + "</Field></Method>";
+function buidTable(strTitleArr, strBodyArr) {
+	var strTitle;
+	var strBody;
+	$.each(strTitleArr, function (i) {
+		if (strTitleArr[0] != "") {
+			strTitle = strTitleArr[0];
 		}
 	});
 
-	//var strHtml = "<p id='curID'></p>" + "<h4>" + strTitle + "</h4><p>" + strBody + "</p>";
-	//return strHtml;
+	$.each(strBodyArr, function (i) {
+		if (strBodyArr[0] != "") {
+			strBody = strBodyArr[0];
+		}
+	});
+	
+	var strHtml = "<h4>" + strTitle + "</h4><p>" + strBody + "</p>";
+	$("#divsso").html(strHtml)
 }
