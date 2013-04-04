@@ -15,13 +15,14 @@ var moveDown = 10;
 $(document).ready(function () {
 	tooltip();
 	popupMove();
+	fillSelects();
 
 	$(document).mousemove(function (e) {
 		var cu = "Y:" + e.pageY + " X:" + e.pageX + "<br>Height:" + $(document).height();
 		dif = parseInt($(document).height()) - parseInt(e.pageY);
 		cu += "<br>Space from below:" + dif;
-		$("#cuPos").html(cu);
-		$("#cuPos").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+		//$("#cuPos").html(cu);
+		//$("#cuPos").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
 	});
 });
 
@@ -189,4 +190,53 @@ function posPop(strdiv,e,bt) {
 			'left' : e.pageX + moveLeft
 		});
 	}
+}
+
+//fill all drop downs
+ function fillSelects() {
+	addOption(document.getElementById('drdChannel'), 'Channel');
+	addOption(document.getElementById('drdKM'), 'KeyMeasures');
+	addOption(document.getElementById('drdRegion'), 'Region');
+	addOption(document.getElementById('drdChannel'), 'Channel');
+}
+
+//add options to dropdown controls
+function addOption(selectbox, strCat) {
+	//debugger
+	var options = loadControls(strCat);
+	var items = options[0];
+	var vals = options[1];
+	for (i = 0; i < items.length; i++) {
+		var optn = document.createElement("OPTION");
+		optn.text = items[i];
+		optn.value = vals[i];
+		selectbox.options.add(optn);
+	}
+}
+
+//load control items from the source list
+function loadControls(strList) {
+	var selOptions = new Array();
+	var FSObjType = new Array();
+	debugger
+	var i = 0;
+	$().SPServices({
+		operation : "GetListItems",
+		async : false,
+		listName : strList,
+		CAMLViewFields : "<ViewFields><FieldRef Name='Title' /></ViewFields>",
+		//CAMLQuery : "<Query><OrderBy><FieldRef Name='Category' /><FieldRef Name='ID' /></OrderBy><Where><Contains><FieldRef Name='Category' /><Value Type='Choice'>" + strCat + "</Value></Contains></Where></Query>",
+		completefunc : function (xData, Status) {
+			if (Status == 'success') {
+				$(xData.responseXML).SPFilterNode("z:row").each(function () {
+					selOptions[i] = $(this).attr("ows_Title");
+					FSObjType[i] = $(this).attr("ows_FSObjType").split(';')[0];
+					i++;
+				});
+			} else {
+				alert(Status);
+			}
+		}
+	});
+	return [selOptions, FSObjType];
 }
