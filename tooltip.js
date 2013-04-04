@@ -197,7 +197,7 @@ function posPop(strdiv,e,bt) {
 	addOption(document.getElementById('drdChannel'), 'Channel');
 	addOption(document.getElementById('drdKM'), 'KeyMeasures');
 	addOption(document.getElementById('drdRegion'), 'Region');
-	addOption(document.getElementById('drdChannel'), 'Channel');
+	addOption(document.getElementById('drdCat'), 'Category');
 }
 
 //add options to dropdown controls
@@ -218,7 +218,7 @@ function addOption(selectbox, strCat) {
 function loadControls(strList) {
 	var selOptions = new Array();
 	var FSObjType = new Array();
-	debugger
+	//debugger
 	var i = 0;
 	$().SPServices({
 		operation : "GetListItems",

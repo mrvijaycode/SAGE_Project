@@ -125,7 +125,8 @@
 	<td id="tdFindItNow" valign="top" align="center" style="padding-top:15px;padding-left:25px">
 		<table border="0" cellpadding="4px" cellspacing="4px" width="400px">
 			<tr >
-				<td class="SAGE-Heading" height="36px" colspan="2" style="background-image:url('WPPages/Images/Menu_BG.jpg');background-repeat:repeat-x">FIND IT NOW</td>
+				<td class="SAGE-Heading" height="36px" colspan="2" style="background-image:url('WPPages/Images/Menu_BG.jpg');background-repeat:repeat-x">
+				FIND IT NOW</td>
 			</tr>
 			<tr >
 				<td width="115px" class="SAGE-Title">Key Words</td>
@@ -139,7 +140,7 @@
 				<td class="SAGE-Title">SAGE Bubble</td>
 				<td>
 					<select id="drdKM" class="SAGE-Controls">
-					
+					<option>-Select-</option>					
 					</select>
 				</td>
 			</tr>
@@ -147,7 +148,7 @@
 				<td class="SAGE-Title">Channel</td>
 				<td>
 					<select id="drdChannel" class="SAGE-Controls">
-					
+					<option>-Select-</option>
 					</select>
 				</td>
 			</tr>
@@ -155,7 +156,7 @@
 				<td class="SAGE-Title">Region</td>
 				<td>
 				<select id="drdRegion" class="SAGE-Controls">
-					
+					<option>-Select-</option>
 					</select>
 				</td>
 			</tr>
@@ -163,7 +164,7 @@
 				<td class="SAGE-Title">Category</td>
 				<td>
 				<select id="drdCat" class="SAGE-Controls">
-					
+					<option>-Select-</option>
 				</select>
 				</td>
 			</tr>
