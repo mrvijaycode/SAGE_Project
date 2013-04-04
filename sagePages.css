@@ -1,0 +1,39 @@
+﻿body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.innerbg{
+	background:url(http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Images/innerpage_bg.jpg) repeat-x top left;
+	font-weight:bold;
+	font-size:13px;
+	}
+	
+.tools_header_bg{
+	background:url(http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Images/tools_header_bg.jpg) repeat-x top left;
+	height:35px;
+	color:#FFF;
+	font-weight:bold;
+	padding-left:10px;
+	font-size:15px;
+	}
+	
+.tools_bg{
+	background:url(http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Images/tools_bg.jpg) repeat-x top left;
+	padding-left:10px;
+	padding-top:10px;
+	font-size:15px;
+	}
+	
+.inner_heading{
+	color:#154bb2;
+	font-weight:bold;
+	padding-left:10px;
+	font-size:16px;
+	}
