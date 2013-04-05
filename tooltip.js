@@ -96,7 +96,7 @@ function popupMove() {
 
 		$('area#SSI').mousemove(function (e) {
 			//$("div#pop-SSI").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSI",e,"50px");
+			posPop("pop-SSI", e, "50px");
 		});
 
 		//SGE
@@ -109,7 +109,7 @@ function popupMove() {
 
 		$('area#SGE').mousemove(function (e) {
 			//$("div#pop-SGE").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SGE",e,"30px");
+			posPop("pop-SGE", e, "30px");
 		});
 
 		////SSO
@@ -122,7 +122,7 @@ function popupMove() {
 
 		$('area#SSO').mousemove(function (e) {
 			//$("div#pop-SSO").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSO",e,"30px");
+			posPop("pop-SSO", e, "30px");
 		});
 
 		//SSG
@@ -135,7 +135,7 @@ function popupMove() {
 
 		$('area#SSG').mousemove(function (e) {
 			//$("div#pop-SSG").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSG",e,"50px");
+			posPop("pop-SSG", e, "50px");
 		});
 
 		////MS
@@ -148,7 +148,7 @@ function popupMove() {
 
 		$('area#MS').mousemove(function (e) {
 			//$("div#pop-MS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-MS",e,"10px");
+			posPop("pop-MS", e, "10px");
 		});
 
 		////BS
@@ -160,7 +160,7 @@ function popupMove() {
 		});
 
 		$('area#BS').mousemove(function (e) {
-			posPop("pop-BS",e,"10px");
+			posPop("pop-BS", e, "10px");
 		});
 
 		////BB
@@ -172,20 +172,20 @@ function popupMove() {
 		});
 
 		$('area#BB').mousemove(function (e) {
-			posPop("pop-BB",e,"10px");
+			posPop("pop-BB", e, "10px");
 		});
 	});
 }
 
 //assign position for all
-function posPop(strdiv,e,bt) {
+function posPop(strdiv, e, bt) {
 	if (dif < 196) {
-		$("div#"+strdiv).css({
+		$("div#" + strdiv).css({
 			'bottom' : bt,
 			'left' : e.pageX + moveLeft
 		});
 	} else {
-		$("div#"+strdiv).css({
+		$("div#" + strdiv).css({
 			'top' : e.pageY + moveDown,
 			'left' : e.pageX + moveLeft
 		});
@@ -193,7 +193,7 @@ function posPop(strdiv,e,bt) {
 }
 
 //fill all drop downs
- function fillSelects() {
+function fillSelects() {
 	addOption(document.getElementById('drdChannel'), 'Channel');
 	addOption(document.getElementById('drdKM'), 'KeyMeasures');
 	addOption(document.getElementById('drdRegion'), 'Region');
@@ -239,4 +239,64 @@ function loadControls(strList) {
 		}
 	});
 	return [selOptions, FSObjType];
+}
+
+function Search() {
+	//debugger
+
+	var sbdLevel = $("#drdKM").find(":selected").text();
+	//alert(sbdLevel);
+
+	var category = $("#drdCat").find(":selected").text();
+	//alert(category);
+
+	var region = $("#drdRegion").find(":selected").text();
+	//alert(region);
+
+	var channel = $("#drdChannel").find(":selected").text();
+	//alert(channel);
+
+	var any = $("#AnyOfTheseWords").val();
+	//alert(any);
+
+	var exact = $("#ExactPhrase").val();
+	//alert(exact);
+
+
+	var searchTerm = "";
+
+	if (any != "") {
+		searchTerm = any;
+	}
+
+	if (exact != "") {
+		searchTerm = "%22" + exact + "%22";
+	}
+
+	var query = "";
+
+	query += searchTerm;
+
+	if (sbdLevel != "-Select-") {
+		query += " %22" + sbdLevel + "%22";
+	}
+
+	if (category != "-Select-") {
+		query += " %22" + category + "%22 ";
+	}
+
+	if (region != "-Select-") {
+		query += " %22" + region + "%22 ";
+	}
+
+	if (channel != "-Select-") {
+		query += " %22" + channel + "%22 ";
+	}
+
+	//alert(query);
+	var searchUrl = "/sites/ShopperBasedDesign/SAGE/WPPages/Pages/results.aspx?k=" + query;
+	//alert(searchUrl);
+	document.location.href = searchUrl;
+	//window.location.replace(searchUrl);
+	//$(window.location).attr('href',searchUrl);
 }
