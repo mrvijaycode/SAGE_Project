@@ -18,7 +18,7 @@
 		</title>
 		<SharePoint:CssLink runat="server" __designer:Preview="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/_layouts/1033/styles/core.css&quot;/&gt;
 " __designer:Values="&lt;P N='InDesign' T='False' /&gt;&lt;P N='ID' T='ctl01' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
-		<SharePoint:Theme runat="server" __designer:Preview="" __designer:Values="&lt;P N='Name' R='-1' /&gt;&lt;P N='InDesign' T='False' /&gt;&lt;P N='ID' T='ctl02' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
+		<SharePoint:Theme runat="server" __designer:Preview="" __designer:Values="&lt;P N='ID' T='ctl02' /&gt;&lt;P N='Name' R='-1' /&gt;&lt;P N='InDesign' T='False' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
 		<SharePoint:ScriptLink language="javascript" name="core.js" Defer="true" runat="server" __designer:Preview="&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;/_layouts/1033/init.js?rev=SKi7C%2FTrsh1U%2FCnIwkB9Ag%3D%3D&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;/_layouts/1033/core.js?rev=mHKsOQ0iU3Q5jdm9OZNDdg%3D%3D&quot;&gt;&lt;/script&gt;
 " __designer:Values="&lt;P N='Language' T='javascript' /&gt;&lt;P N='Name' T='core.js' /&gt;&lt;P N='Defer' T='True' /&gt;&lt;P N='InDesign' T='False' /&gt;&lt;P N='ID' T='ctl03' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
@@ -116,6 +116,14 @@
 			vertical-align: middle;
 			margin: 0;
 			}
+
+			.adjust{				
+			color:#4c4c4c;
+			font-family:tahoma;
+			font-size:8pt;
+			padding-top:4px;
+				}
+			
 		</style>
 		<link rel="stylesheet" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Style/SAGENewStyle.css" />
 		<link rel="StyleSheet" href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Style/Menu/sbd-v2.css" type="text/css" media="screen">
@@ -146,16 +154,19 @@
 	<body style="width: 990px;" scroll="yes" onload="javascript:if (typeof(_spBodyOnLoadWrapper) != 'undefined') _spBodyOnLoadWrapper();">
 		
 		<form runat="server" onsubmit="return _spFormOnSubmitWrapper();">
+	  
+	  
+			<WebPartPages:SPWebPartManager id="m" runat="Server"/>
 	<asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" runat="server"></asp:ContentPlaceHolder>
 	  <asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" runat="server"></asp:ContentPlaceHolder>
 	  <asp:ContentPlaceHolder id="PlaceHolderSiteName" runat="server"></asp:ContentPlaceHolder>
   		<asp:ContentPlaceHolder id="PlaceHolderTopNavBar" runat="server"></asp:ContentPlaceHolder>
 		<asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" runat="server"></asp:ContentPlaceHolder>
 		
-		<asp:ContentPlaceHolder id="PlaceHolderPageImage" runat="server"/>
+		
 
 		<asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" runat="server"></asp:ContentPlaceHolder>
-		<asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" />
+		
 		<asp:ContentPlaceHolder id="PlaceHolderMiniConsole" runat="server"/>
 		<asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" runat="server"></asp:ContentPlaceHolder>
 	
@@ -165,7 +176,6 @@
 	  	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server"/>
 	  
 	  
-			<WebPartPages:SPWebPartManager id="m" runat="Server"/>
 			<!--Custom change for P&G: added table for message -->
 			<table width="990" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 				<tr>
@@ -297,7 +307,18 @@
 													<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/WPPages/Pages/sso.aspx?itmid=6">Superb Store Operations</a> </li>
 												</ul>
 											</li>
-											<li><a href="http://teamspace.pg.com/sites/cbdglobal/cpp/CPPHome.aspx" style="border-right-style: none">ADMINISTRATION</a></li>
+											<li><a href="http://teamspace.pg.com/sites/cbdglobal/cpp/CPPHome.aspx" style="border-right-style: none">ADMINISTRATION</a>
+											
+											<ul>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/Category/AllItems.aspx">Manage Category</a> </li>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/Channel/AllItems.aspx">Manage Channel</a> </li>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/KeyMeasureDetails/AllItems.aspx">Manage Key Measure Details</a> </li>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/KeyMeasures/AllItems.aspx">Manage Key Measures</a> </li>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/Region/AllItems.aspx">Manage Regions</a> </li>
+											<li><a href="http://teamspace.pg.com/sites/ShopperBasedDesign/SAGE/Lists/Links/AllItems.aspx">Manage Tools & Capabilities</a> </li>					
+											</ul>
+											
+											</li>
 										</ul>
 									</td>
 									<td width="12"><img src="http://teamspace.pg.com/sites/cbdglobal/CBDImages/main_link_rt.jpg" width="12" height="38" /></td>
@@ -327,8 +348,20 @@
 													<PlaceHolder id="MSO_ContentDiv" runat="server">
 														<table id="MSO_ContentTable" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="ms-propertysheet">
 															<tr>
-																<td valign="top" height="100%"><a name="mainContent"></a>
-																	<asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat="server" />
+																<td valign="top" height="100%">
+																<style type="text/css">
+																	.ms-listdescription {
+																	}
+																	</style>
+																	<table>
+																	<tr><td><asp:ContentPlaceHolder id="PlaceHolderPageImage" runat="server"/></td>
+																	<td><div>
+																	<asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" />
+																	</div><div>
+																	<asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat="server" /></div></td></tr></table>
+																	
+																	
+																	
 																	<asp:ContentPlaceHolder id="PlaceHolderMain" runat="server">
 																	</asp:ContentPlaceHolder>
 																</td>
@@ -365,7 +398,7 @@
 	</table>
 	<!-- end customization -->
 	<asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server">
-		<SharePoint:FormDigest runat=server __designer:Preview="&lt;INPUT TYPE=&quot;HIDDEN&quot; Name=&quot;__REQUESTDIGEST&quot; Value=&quot;0xBDD9660C3C1D2BFE1E42A70E9B3E5FCA0AB9BCB50BF5BC6BDE4D039DB42788FC1E136212E76463F21EC4A46D5B62A96145A8E0A514C0197578727BB43FD53D1B,04 Apr 2013 14:52:03 -0000&quot;&gt;" __designer:Values="&lt;P N='InDesign' T='False' /&gt;&lt;P N='ID' T='ctl10' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
+		<SharePoint:FormDigest runat=server __designer:Preview="&lt;INPUT TYPE=&quot;HIDDEN&quot; Name=&quot;__REQUESTDIGEST&quot; Value=&quot;0x579C51E3ADD650B904127192B486EDE61EE9E8E4CBE5C48EBCB8CACBE850ACFD51485332A22C76805DAFD612802915F9DC3B678DD39DB9CD999F1CA40A72654B,05 Apr 2013 14:08:43 -0000&quot;&gt;" __designer:Values="&lt;P N='InDesign' T='False' /&gt;&lt;P N='ID' T='ctl10' /&gt;&lt;P N='Page' ID='1' /&gt;&lt;P N='TemplateControl' ID='2' /&gt;&lt;P N='AppRelativeTemplateSourceDirectory' R='-1' /&gt;"/>
 	</asp:ContentPlaceHolder>
 	<input type="text" name="__spDummyText1" style="display: none;" size="1" />
 	<input type="text" name="__spDummyText2" style="display: none;" size="1" />
@@ -375,10 +408,8 @@
 	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" runat="server"></asp:ContentPlaceHolder>
 	<asp:ContentPlaceHolder id="PlaceHolderBodyLeftBorder" runat="server"></asp:ContentPlaceHolder>	
 	<asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" runat="server"></asp:ContentPlaceHolder>
-	<asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" runat="server"><div>1</div></asp:ContentPlaceHolder>
-	<asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" runat="server"><div>
-	
-	</div></asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" runat="server"></asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" runat="server"></asp:ContentPlaceHolder>
 	
 	<asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" />
 	<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server" />
@@ -388,6 +419,8 @@
 
 	$(document).ready(function () {
 	$(".ms-areaseparatorleft").hide();
+	$(".ms-listdescription").addClass("adjust");
+	$(".ms-listdescription").removeClass('ms-listdescription');
 	});
 
 	</script>
