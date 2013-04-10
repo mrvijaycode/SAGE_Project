@@ -24,7 +24,34 @@ $(document).ready(function () {
 		//$("#cuPos").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
 	});
 	$(document).attr('title', 'SAGE - Home');
+	//alert($.browser.version);
+
+	if ($.browser.version == "6.0") {}
 });
+
+//hide selects
+function updateSelects(itens, value) {
+
+	for (i = 0; i < itens.length; i++) {
+		if (itens[i].id != "ctl00_PlaceHolderSearchArea_ctl01_SBScopesDDL")
+			itens[i].style.display = value;
+
+	}
+}
+
+function ie6fix(objOp) {
+
+	//alert(objOp);
+
+	switch (objOp) {
+	case "hide":
+		updateSelects(document.getElementsByTagName("select"), "none");
+		break;
+	case "show":
+		updateSelects(document.getElementsByTagName("select"), "inline");
+		break;
+	}
+}
 
 // to get "KeyMeasureDetails" content on popups
 function tooltip() {
@@ -89,27 +116,29 @@ function popupMove() {
 		//SSI
 		$('area#SSI').hover(function (e) {
 			$('div#pop-SSI').show();
-
+			ie6fix("hide");
 		}, function () {
 			$('div#pop-SSI').hide();
+			ie6fix("show");
 		});
 
 		$('area#SSI').mousemove(function (e) {
 			//$("div#pop-SSI").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSI",e,"50px");
+			posPop("pop-SSI", e, "50px");
 		});
 
 		//SGE
 		$('area#SGE').hover(function (e) {
 			$('div#pop-SGE').show();
-
+			ie6fix("hide");
 		}, function () {
 			$('div#pop-SGE').hide();
+			ie6fix("show");
 		});
 
 		$('area#SGE').mousemove(function (e) {
 			//$("div#pop-SGE").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SGE",e,"30px");
+			posPop("pop-SGE", e, "30px");
 		});
 
 		////SSO
@@ -122,81 +151,86 @@ function popupMove() {
 
 		$('area#SSO').mousemove(function (e) {
 			//$("div#pop-SSO").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSO",e,"30px");
+			posPop("pop-SSO", e, "30px");
 		});
 
 		//SSG
 		$('area#SSG').hover(function (e) {
 			$('div#pop-SSG').show();
-
+			ie6fix("hide");
 		}, function () {
 			$('div#pop-SSG').hide();
+			ie6fix("show");
 		});
 
 		$('area#SSG').mousemove(function (e) {
 			//$("div#pop-SSG").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-SSG",e,"50px");
+			posPop("pop-SSG", e, "50px");
 		});
 
 		////MS
 		$('area#MS').hover(function (e) {
 			$('div#pop-MS').show();
-
+			ie6fix("hide");
 		}, function () {
 			$('div#pop-MS').hide();
+			ie6fix("show");
 		});
 
 		$('area#MS').mousemove(function (e) {
 			//$("div#pop-MS").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-			posPop("pop-MS",e,"10px");
+			posPop("pop-MS", e, "10px");
 		});
 
 		////BS
 		$('area#BS').hover(function (e) {
 			$('div#pop-BS').show();
+			ie6fix("hide");
 
 		}, function () {
 			$('div#pop-BS').hide();
+			ie6fix("show");
 		});
 
 		$('area#BS').mousemove(function (e) {
 			//posPop("pop-BS",e,"10px");
 			$("div#pop-BS").css({
-			'bottom' :'10px',
-			'left' : e.pageX + moveLeft
-		});
+				'bottom' : '10px',
+				'left' : e.pageX + moveLeft
+			});
 
 		});
 
 		////BB
 		$('area#BB').hover(function (e) {
 			$('div#pop-BB').show();
-
+			ie6fix("hide");
 		}, function () {
 			$('div#pop-BB').hide();
+			ie6fix("show");
 		});
 
 		$('area#BB').mousemove(function (e) {
 			//posPop("pop-BB",e,"10px");
-			
+
 			$("div#pop-BB").css({
-			'bottom' :'10px',
-			'left' : e.pageX + moveLeft
-		});
-			
+				'bottom' : '10px',
+				'left' : e.pageX + moveLeft
+			});
+
 		});
 	});
 }
 
 //assign position for all
-function posPop(strdiv,e,bt) {
+function posPop(strdiv, e, bt) {
 	if (dif < 196) {
-		$("div#"+strdiv).css({
+		$("div#" + strdiv).css({
 			'bottom' : bt,
 			'left' : e.pageX + moveLeft
 		});
 	} else {
-		$("div#"+strdiv).css({
+		$("div#" + strdiv).css({
 			'top' : e.pageY + moveDown,
 			'left' : e.pageX + moveLeft
 		});
